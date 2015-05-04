@@ -1,0 +1,42 @@
+{
+  "name": "google-stocks",
+  "version": "0.1.0",
+  "author": "anvk",
+  "main": "google-stocks.js",
+  "description": "Get stocks using Google Finance API",
+  "contributors": [
+    {
+      "name": "Alexey Novak",
+      "email": "alexey.novak.mail@gmail.com"
+    }
+  ],
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --reporter spec test/*"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:anvk/google-stocks.git"
+  },
+  "keywords": [
+    "stocks",
+    "Google",
+    "API"
+  ],
+  "dependencies": {
+    "request": "^2.55.0"
+  },
+  "devDependencies": {
+    "mocha": "2.2.x",
+    "chai": "2.1.x"
+  },
+  "engine": "node >= 0.10.x",
+  "homepage": "http://github.com/anvk/google-stocks",
+  "bugs": {
+    "url": "https://github.com/anvk/google-stocks/issues"
+  },
+  "private": false,
+  "license": "MIT"
+}
