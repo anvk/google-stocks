@@ -19,10 +19,11 @@ describe('google-stocks tests', function() {
   });
 
   it('with a non existing code', function() {
-    var codes = ['ABC'];
+    var codes = ['ZXY11_'];
 
     googleStocks.get(codes, function(error, data) {
       expect(error).to.equal('Webservice returned 400');
+      expect(data).to.be.undefined;
     });
   });
 
@@ -54,7 +55,7 @@ describe('google-stocks tests', function() {
   });
 
   it('with a an existing code and non existing code', function(done) {
-    var codes = ['ABC', 'GOOG'];
+    var codes = ['ZXY11_', 'GOOG'];
 
     googleStocks.get(codes, function(error, data) {
       expect(data.length).to.equal(1);
