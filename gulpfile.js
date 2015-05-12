@@ -1,0 +1,24 @@
+var gulp = require('gulp'),
+    babel = require('gulp-babel'),
+    mocha = require('gulp-mocha');
+
+gulp.task('babel', function() {
+  return gulp.src('src/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('lib/'));
+});
+
+gulp.task('watch', function() {
+  gulp.watch('*.js', ['babel']);
+});
+
+gulp.task('test', ['babel'], function() {
+  return gulp.src(['test/*.js'])
+    .pipe(mocha({ reporter: 'spec' }))
+    .on('error', function(err) {
+        console.log(err.stack);
+    });
+});
+
+// Default Task
+gulp.task('default', ['babel', 'test']);
