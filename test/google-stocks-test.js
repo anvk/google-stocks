@@ -2,12 +2,12 @@
 
 var chai = require('chai'),
     expect = chai.expect,
-    googleStocks = require('../lib/google-stocks.js');
+    googleStocks = require('../dist/google-stocks.js');
 
 describe('google-stocks tests', function() {
 
   it('nothing was passed', function() {
-    googleStocks.get(null, function(error, data) {
+    googleStocks.get(undefined, function(error, data) {
       expect(error).to.equal('No Stocks were passed');
     });
   });

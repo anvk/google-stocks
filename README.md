@@ -6,7 +6,7 @@
 ## Install
 
 ```
-$ npm install --save google-stocks
+$ npm install google-stocks --save
 ```
 
 
@@ -108,6 +108,12 @@ returned format looks like this:
   }
 ]
 **/
+```
+
+## Example
+
+```
+node example.js
 ```
 
 ## License
