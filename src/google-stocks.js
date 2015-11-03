@@ -20,7 +20,7 @@ class GoogleStocks {
     request(url, (error, response, body) => {
       if (error) {
         return callback(error);
-      } else if (response.statusCode != 200) {
+      } else if (parseInt(response.statusCode, 10) !== 200) {
         return callback('Webservice returned ' + response.statusCode);
       }
 
@@ -37,6 +37,6 @@ class GoogleStocks {
     return JSON.parse(data);
   }
 
-};
+}
 
 export default new GoogleStocks();

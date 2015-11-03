@@ -39,7 +39,7 @@ var GoogleStocks = (function () {
       (0, _request2['default'])(url, function (error, response, body) {
         if (error) {
           return callback(error);
-        } else if (response.statusCode != 200) {
+        } else if (parseInt(response.statusCode, 10) !== 200) {
           return callback('Webservice returned ' + response.statusCode);
         }
 
@@ -60,8 +60,6 @@ var GoogleStocks = (function () {
 
   return GoogleStocks;
 })();
-
-;
 
 exports['default'] = new GoogleStocks();
 module.exports = exports['default'];

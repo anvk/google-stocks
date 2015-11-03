@@ -1,36 +1,35 @@
-/* global it, describe, require */
+'use strict';
 
-var chai = require('chai'),
-    expect = chai.expect,
-    googleStocks = require('../dist/google-stocks.js');
+import {expect} from 'chai';
+import googleStocks from '../dist/google-stocks.js';
 
-describe('google-stocks tests', function() {
+describe('google-stocks tests', () => {
 
-  it('nothing was passed', function() {
-    googleStocks.get(undefined, function(error, data) {
+  it('nothing was passed', () => {
+    googleStocks.get(undefined, (error, data) => {
       expect(error).to.equal('No Stocks were passed');
     });
   });
 
-  it('empty array', function() {
-    googleStocks.get([], function(error, data) {
+  it('empty array', () => {
+    googleStocks.get([], (error, data) => {
       expect(error).to.equal('No Stocks were passed');
     });
   });
 
-  it('with a non existing code', function() {
+  it('with a non existing code', () => {
     var codes = ['ZXY11_'];
 
-    googleStocks.get(codes, function(error, data) {
+    googleStocks.get(codes, (error, data) => {
       expect(error).to.equal('Webservice returned 400');
       expect(data).to.be.undefined;
     });
   });
 
-  it('proper stock code', function(done) {
+  it('proper stock code', done => {
     var codes = ['AAPL'];
 
-    googleStocks.get(codes, function(error, data) {
+    googleStocks.get(codes, (error, data) => {
       expect(error).to.be.null;
       expect(data.length).to.equal(1);
       expect(data.shift().t).to.equal(codes.shift());
@@ -38,12 +37,12 @@ describe('google-stocks tests', function() {
     });
   });
 
-  it('with a different market code', function(done) {
+  it('with a different market code', done => {
     var market = 'TSE',
         code = 'WJA',
         codes = [market + ':' + code];
 
-    googleStocks.get(codes, function(error, data) {
+    googleStocks.get(codes, (error, data) => {
       expect(error).to.be.null;
       expect(data.length).to.equal(1);
 
@@ -54,19 +53,19 @@ describe('google-stocks tests', function() {
     });
   });
 
-  it('with a an existing code and non existing code', function(done) {
+  it('with a an existing code and non existing code', done => {
     var codes = ['ZXY11_', 'GOOG'];
 
-    googleStocks.get(codes, function(error, data) {
+    googleStocks.get(codes, (error, data) => {
       expect(data.length).to.equal(1);
       done();
     });
   });
 
-  it('with both existing codes and different markets', function(done) {
+  it('with both existing codes and different markets', done => {
     var codes = ['TSE:WJA', 'GOOG'];
 
-    googleStocks.get(codes, function(error, data) {
+    googleStocks.get(codes, (error, data) => {
       expect(data.length).to.equal(2);
       done();
     });
