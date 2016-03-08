@@ -12,16 +12,62 @@ $ npm install google-stocks --save
 
 ## Usage
 
+### Callbacks
+
 ```js
 var googleStocks = require('google-stocks');
 
-googleStocks.get(['AAPL'], function(error, data) {
+googleStocks(['AAPL'], function(error, data) {
   console.log(data);
 });
 
-googleStocks.get(['TSE:WJA', 'NASDAQ:GOOG', 'AAPL'], function(error, data) {
+googleStocks(['TSE:WJA', 'NASDAQ:GOOG', 'AAPL'], function(error, data) {
   console.log(data);
 });
+```
+
+### Promises
+
+```js
+var googleStocks = require('google-stocks');
+
+googleStocks(['AAPL'])
+  .then(function(data) {
+    /* do something with data */
+  })
+  .catch(function(error) {
+    /* error logic */
+  });
+
+googleStocks(['TSE:WJA', 'NASDAQ:GOOG', 'AAPL'])
+  .then(function(data) {
+    /* do something with data */
+  })
+  .catch(function(error) {
+    /* error logic */
+  });
+```
+
+### ES2015
+
+```js
+import googleStocks from 'google-stocks';
+
+googleStocks(['AAPL'])
+  .then(data => {
+    /* do something with data */
+  })
+  .catch(error => {
+    /* error logic */
+  });
+
+googleStocks(['TSE:WJA', 'NASDAQ:GOOG', 'AAPL'])
+  .then(data => {
+    /* do something with data */
+  })
+  .catch(error => {
+    /* error logic */
+  });
 ```
 
 returned format looks like this:
@@ -113,11 +159,9 @@ returned format looks like this:
 ## Example
 
 ```
-node example.js
+npm run example
 ```
 
 ## License
 
 MIT license; see [LICENSE](./LICENSE).
-
-(c) 2015 by Alexey Novak

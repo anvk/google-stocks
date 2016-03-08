@@ -1,6 +1,6 @@
 {
   "name": "google-stocks",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "author": "anvk",
   "main": "dist/google-stocks.js",
   "description": "Get stocks using Google Finance API",
@@ -11,6 +11,11 @@
     }
   ],
   "scripts": {
+    "lint": "eslint src",
+    "build:source": "rimraf dist/ && babel src/ --out-dir dist/",
+    "build:tests": "rimraf test-dist/ && babel test/ --out-dir test-dist/",
+    "clean": "rimraf dist/ && rimraf test-dist/",
+    "build": "npm run build:source && npm run build:tests",
     "test": "node node_modules/mocha/bin/mocha --reporter spec test-dist/*",
     "example": "node example.js"
   },
@@ -27,16 +32,17 @@
     "API"
   ],
   "dependencies": {
-    "request": "^2.55.0"
+    "promise": "7.1.1",
+    "request": "2.55.0"
   },
   "devDependencies": {
     "babel": "5.6.5",
+    "babel-eslint": "5.0.0",
     "chai": "3.0.0",
-    "gulp": "3.9.0",
-    "gulp-babel": "5.1.0",
-    "gulp-mocha": "2.1.2",
-    "gulp-jshint": "1.12.0",
-    "mocha": "2.2.5"
+    "eslint": "2.2.0",
+    "eslint-config-airbnb": "6.0.2",
+    "mocha": "2.2.5",
+    "rimraf": "2.5.2"
   },
   "engine": "node >= 0.10.x",
   "homepage": "http://github.com/anvk/google-stocks",
