@@ -1,6 +1,6 @@
 {
   "name": "google-stocks",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "author": "anvk",
   "main": "dist/google-stocks.js",
   "description": "Get stocks using Google Finance API",
