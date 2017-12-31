@@ -14,7 +14,7 @@ var _request2 = _interopRequireDefault(_request);
 var _promise = require('promise');
 
 var HTTP_OK = 200;
-var URL = 'https://www.google.com/finance/info?&q=';
+var URL = 'https://finance.google.com/finance?output=json&q=';
 
 function onParse(data) {
   // remove first 3 characters which are "//"
