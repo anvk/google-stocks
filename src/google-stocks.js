@@ -2,7 +2,7 @@ import request from 'request';
 import { denodeify } from 'promise';
 
 const HTTP_OK = 200;
-const URL = 'https://www.google.com/finance/info?&q=';
+const URL = 'https://finance.google.com/finance?output=json&q=';
 
 function onParse(data) {
   // remove first 3 characters which are "//"
