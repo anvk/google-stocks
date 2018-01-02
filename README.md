@@ -2,13 +2,11 @@
 
 > Get stocks using Google Finance API
 
-
 ## Install
 
 ```
 $ npm install google-stocks --save
 ```
-
 
 ## Usage
 
@@ -70,87 +68,63 @@ googleStocks(['TSE:WJA', 'NASDAQ:GOOG', 'AAPL'])
   });
 ```
 
-returned format looks like this:
+(_Jan 02 2018_) Example of a returned format:
 
 ```js
 /**
 [
   {
+    "symbol": "AAPL",
+    "exchange": "NASDAQ",
     "id": "22144",
     "t": "AAPL",
     "e": "NASDAQ",
-    "l": "129.09",
-    "l_fix": "129.09",
-    "l_cur": "129.09",
-    "s": "0",
-    "ltt": "1:43PM EDT",
-    "lt": "May 4, 1:43PM EDT",
-    "lt_dts": "2015-05-04T13:43:56Z",
-    "c": "+0.14",
-    "c_fix": "0.14",
-    "cp": "0.11",
-    "cp_fix": "0.11",
+    "name": "Apple Inc.",
+    "f_reuters_url": "http:\u002F\u002Fstocks.us.reuters.com\u002Fstocks\u002Fratios.asp?rpc=66\u0026symbol=AAPL.O",
+    "f_recent_quarter_date": "Q3 (Sep \u002717)",
+    "f_annual_date": "2017",
+    "f_ttm_date": "2016",
+    "financials": [{...
+      ],
+    "kr_recent_quarter_date": "Q3 (Sep \u002717)",
+    "kr_annual_date": "2017",
+    "kr_ttm_date": "TTM",
+    "keyratios": [{...
+      ],
+    "c": "+1.30",
+    "l": "170.53",
+    "cp": "0.77",
     "ccol": "chg",
-    "pcls_fix": "128.95"
-  }
-]
-**/
-
-/**
-[
-  {
-    "id": "665871",
-    "t": "WJA",
-    "e": "TSE",
-    "l": "28.06",
-    "l_fix": "28.06",
-    "l_cur": "CA$28.06",
-    "s": "0",
-    "ltt": "1:29PM EDT",
-    "lt": "May 4, 1:29PM EDT",
-    "lt_dts": "2015-05-04T13:29:56Z",
-    "c": "+0.45",
-    "c_fix": "0.45",
-    "cp": "1.63",
-    "cp_fix": "1.63",
-    "ccol": "chg",
-    "pcls_fix": "27.61"
-  },
-  {
-    "id": "304466804484872",
-    "t": "GOOG",
-    "e": "NASDAQ",
-    "l": "541.31",
-    "l_fix": "541.31",
-    "l_cur": "541.31",
-    "s": "0",
-    "ltt": "1:44PM EDT",
-    "lt": "May 4, 1:44PM EDT",
-    "lt_dts": "2015-05-04T13:44:58Z",
-    "c": "+3.41",
-    "c_fix": "3.41",
-    "cp": "0.63",
-    "cp_fix": "0.63",
-    "ccol": "chg",
-    "pcls_fix": "537.9"
-  },
-  {
-    "id": "22144",
-    "t": "AAPL",
-    "e": "NASDAQ",
-    "l": "129.10",
-    "l_fix": "129.10",
-    "l_cur": "129.10",
-    "s": "0",
-    "ltt": "1:45PM EDT",
-    "lt": "May 4, 1:45PM EDT",
-    "lt_dts": "2015-05-04T13:45:32Z",
-    "c": "+0.15",
-    "c_fix": "0.15",
-    "cp": "0.12",
-    "cp_fix": "0.12",
-    "ccol": "chg",
-    "pcls_fix": "128.95"
+    "op": "170.16",
+    "hi": "170.54",
+    "lo": "169.26",
+    "vo": "1.14M",
+    "avvo": "26.27M",
+    "hi52": "177.20",
+    "lo52": "114.76",
+    "mc": "875.55B",
+    "pe": "18.56",
+    "fwpe": "",
+    "beta": "1.24",
+    "eps": "9.19",
+    "dy": "1.48",
+    "ldiv": "0.63",
+    "shares": "5.13B",
+    "instown": "62%",
+    "eo": "",
+    "sid": "us-TRBC:57",
+    "sname": "Technology",
+    "iid": "us-TRBC:5710601010",
+    "iname": "Computer Hardware - NEC",
+    "related": [{...
+      ],
+    "summary": [{...
+      ],
+    "management": [{...
+      ],
+    "moreresources": [{...
+      ],
+    "events": []
   }
 ]
 **/
