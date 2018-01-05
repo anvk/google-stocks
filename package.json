@@ -2,7 +2,7 @@
   "name": "google-stocks",
   "version": "2.0.0",
   "author": "anvk",
-  "main": "dist/google-stocks.js",
+  "main": "dist/index.js",
   "description": "Get stocks using Google Finance API",
   "contributors": [
     {
@@ -13,8 +13,7 @@
   "scripts": {
     "lint": "eslint src",
     "clean": "node ./node_modules/del-cli/cli.js -f dist/",
-    "build":
-      "npm run clean && babel src/ --out-dir dist/ --ignore __tests__,__mocks__,__snapshots__",
+    "build": "npm run clean && babel src/ --out-dir dist/ --ignore __tests__,__mocks__,__snapshots__",
     "example": "node example.js",
     "test": "jest"
   },
@@ -25,7 +24,11 @@
     "type": "git",
     "url": "git@github.com:anvk/google-stocks.git"
   },
-  "keywords": ["stocks", "Google", "API"],
+  "keywords": [
+    "stocks",
+    "Google",
+    "API"
+  ],
   "dependencies": {
     "promise": "8.0.1",
     "request": "2.83.0"

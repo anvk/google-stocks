@@ -1,6 +1,8 @@
 'use strict';
 
-var googleStocks = require('./dist/google-stocks.js').default;
+// In your code use
+// var googleStocks = require('google-stocks');
+var googleStocks = require('./dist/index.js');
 
 googleStocks(['AAPL'], function(error, data) {
   console.log(data);
